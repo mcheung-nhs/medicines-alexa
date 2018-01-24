@@ -1,0 +1,80 @@
+{
+    "intents": [
+        {
+            "intent": "AboutIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "KeyFactsIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "WhoHowCanTakeIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "WhenToTakeIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "SideEffectsIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "HowToCopeIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "CautionsIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "PregnancyBreastFeedingIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "HelpIntent",
+            "slots": []
+        }
+    ]
+}
