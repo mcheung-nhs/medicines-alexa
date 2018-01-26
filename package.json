@@ -1,0 +1,19 @@
+{
+  "name": "medicines-alexa",
+  "version": "1.0.0",
+  "description": "skill to call the medicines api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcheung-nhs/medicines-alexa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcheung-nhs/medicines-alexa/issues"
+  },
+  "homepage": "https://github.com/mcheung-nhs/medicines-alexa#readme"
+}
