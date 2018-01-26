@@ -19,7 +19,7 @@
             ]
         },
         {
-            "intent": "WhoHowCanTakeIntent",
+            "intent": "WhoCanTakeIntent",
             "slots": [
                 {
                     "name": "medicine",
@@ -28,7 +28,7 @@
             ]
         },
         {
-            "intent": "WhenToTakeIntent",
+            "intent": "HowWhenToTakeIntent",
             "slots": [
                 {
                     "name": "medicine",
@@ -73,7 +73,15 @@
             ]
         },
         {
-            "intent": "HelpIntent",
+            "intent": "AMAZON.HelpIntent",
+            "slots": []
+        },
+        {
+            "intent": "AMAZON.StopIntent",
+            "slots": []
+        },
+        {
+            "intent": "AMAZON.CancelIntent",
             "slots": []
         }
     ]

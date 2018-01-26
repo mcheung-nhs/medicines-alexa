@@ -1,4 +1,4 @@
-var request = require("request")
+var request = require("request");
 var striptags = require('striptags');
 
 // Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -6,15 +6,14 @@ var striptags = require('striptags');
 exports.handler = function (event, context) {
     try {
         console.log("event.session.application.applicationId=" + event.session.application.applicationId);
-
         /**
          * Uncomment this if statement and populate with your skill's application ID to
          * prevent someone else from configuring a skill that sends requests to this function.
          */
 
-    // if (event.session.application.applicationId !== "") {
-    //     context.fail("Invalid Application ID");
-    //  }
+        // if (event.session.application.applicationId !== "") {
+        //     context.fail("Invalid Application ID");
+        //  }
 
         if (event.session.new) {
             onSessionStarted({requestId: event.request.requestId}, event.session);
@@ -45,7 +44,6 @@ exports.handler = function (event, context) {
  * Called when the session starts.
  */
 function onSessionStarted(sessionStartedRequest, session) {
-    // add any session init logic here
 }
 
 /**
@@ -60,15 +58,48 @@ function onLaunch(launchRequest, session, callback) {
  */
 function onIntent(intentRequest, session, callback) {
 
-    var intent = intentRequest.intent
+    var intent = intentRequest.intent;
     var intentName = intentRequest.intent.name;
+    var medicine = intent.slots.medicine.value.toLowerCase();
 
-    // dispatch custom intents to handlers here
-    if (intentName == "AboutIntent") {
-        handleAboutIntent(intent, session, callback)
-    } else {
-         throw "Invalid intent"
+    switch(intentName) {
+        case "AboutIntent":
+            var section = "about";
+            break;
+        case "KeyFactsIntent":
+            var section = "key-facts";
+            break;
+        case "WhoCanTakeIntent":
+            var section = "who";
+            break;
+        case "HowWhenToTakeIntent":
+            var section = "how-and";
+            break;
+        case "SideEffectsIntent":
+            var section = "side-effects";
+            break;
+        case "HowToCopeIntent":
+            var section = "how-to";
+            break;
+        case "CautionsIntent":
+            var section = "cautions";
+            break;
+        case "PregnancyBreastFeedingIntent":
+            var section = "pregnancy";
+            break;
+        default:
+            var section = "about";
     }
+
+    var url = "https://beta-platform-review-beta-medicines.dev.beta.nhschoices.net/content-api/medicines/" + medicine + "?section=" + section;
+
+    request.get(url, function(error, response, body) {
+      var d = JSON.parse(body);
+      var result1 = striptags(d.value.section_content[0].value);
+      var result = result1.replace(/\./g, ". ").replace(/\n/g, "");
+      var speechOutput = result;
+      callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, "", true));
+    })
 }
 
 /**
@@ -82,59 +113,20 @@ function onSessionEnded(sessionEndedRequest, session) {
 // ------- Skill specific logic -------
 
 function getWelcomeResponse(callback) {
-    var speechOutput = "Welcome! Ask a question about a medicine"
-
-    var reprompt = "Ask a question about a medicine"
-
-    var header = "Get Info"
-
-    var shouldEndSession = false
-
+    var speechOutput = "Welcome! Ask a question about a medicine, such as tell me about paracetamol or what are the side effects of tramadol";
+    var reprompt = "Ask a question about a medicine such as tell me about paracetamol or what are the side effects of ibuprofen";
+    var header = "Get Info";
+    var shouldEndSession = false;
     var sessionAttributes = {
         "speechOutput" : speechOutput,
         "repromptText" : reprompt
-    }
+    };
 
-    callback(sessionAttributes, buildSpeechletResponse(header, speechOutput, reprompt, shouldEndSession))
-
-}
-
-function handleAboutIntent(intent, session, callback) {
-
-    var speechOutput = "We have an error"
-
-    getJSON(function(data) {
-        if (data != "ERROR") {
-            var speechOutput = data
-        }
-        callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, "", true))
-    })
-
-}
-
-function url() {
-    return "https://beta-platform-review-beta-medicines.dev.beta.nhschoices.net/content-api/medicines/citalopram?section=about"
-}
-
-function getJSON(callback) {
-    // HTTP - WIKPEDIA
-     request.get(url(), function(error, response, body) {
-         var d = JSON.parse(body)
-         var result = striptags(d.value.section_content.value)
-         callback(result);
-         //if (result > 0) {
-        //     callback(result);
-         //} else {
-        //     callback("ERROR")
-         //}
-    })
-
+    callback(sessionAttributes, buildSpeechletResponse(header, speechOutput, reprompt, shouldEndSession));
 }
 
 
 // ------- Helper functions to build responses for Alexa -------
-
-
 function buildSpeechletResponse(title, output, repromptText, shouldEndSession) {
     return {
         outputSpeech: {
@@ -178,8 +170,4 @@ function buildResponse(sessionAttributes, speechletResponse) {
         sessionAttributes: sessionAttributes,
         response: speechletResponse
     };
-}
-
-function capitalizeFirst(s) {
-    return s.charAt(0).toUpperCase() + s.slice(1)
 }

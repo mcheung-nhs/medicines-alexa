@@ -4,28 +4,39 @@ AboutIntent talk to me about {medicine}
 AboutIntent about {medicine}
 AboutIntent what is {medicine}
 AboutIntent explain what {medicine} is
+AboutIntent explain what is {medicine}
 AboutIntent can you tell me what {medicine} is
 
 KeyFactsIntent what are the key facts about {medicine}
+KeyFactsIntent what are the facts about {medicine}
 KeyFactsIntent give me key facts about {medicine}
+KeyFactsIntent give me facts about {medicine}
 KeyFactsIntent give me key facts of {medicine}
+KeyFactsIntent give me facts of {medicine}
 KeyFactsIntent what are key facts about {medicine}
+KeyFactsIntent what are facts about {medicine}
 KeyFactsIntent what are key facts of {medicine}
+KeyFactsIntent what are facts of {medicine}
 KeyFactsIntent tell me key facts about {medicine}
+KeyFactsIntent tell me facts about {medicine}
 KeyFactsIntent tell me key facts of {medicine}
+KeyFactsIntent tell me facts of {medicine}
 KeyFactsIntent key facts about {medicine}
+KeyFactsIntent facts about {medicine}
 KeyFactsIntent key facts of {medicine}
+KeyFactsIntent facts of {medicine}
 KeyFactsIntent key facts {medicine}
+KeyFactsIntent facts {medicine}
 
-WhoHowCanTakeIntent who can take {medicine}
-WhoHowCanTakeIntent how do i take {medicine}
-WhoHowCanTakeIntent how can i take {medicine}
-WhoHowCanTakeIntent how to take {medicine}
-WhoHowCanTakeIntent taking {medicine}
+WhoCanTakeIntent who can take {medicine}
+WhoCanTakeIntent how do i take {medicine}
+WhoCanTakeIntent how can i take {medicine}
+WhoCanTakeIntent how to take {medicine}
+WhoCanTakeIntent taking {medicine}
 
-WhenToTakeIntent when to take {medicine}
-WhenToTakeIntent when can i take {medicine}
-WhenToTakeIntent when do i take {medicine}
+HowWhenToTakeIntent when to take {medicine}
+HowWhenToTakeIntent when can i take {medicine}
+HowWhenToTakeIntent when do i take {medicine}
 
 SideEffectsIntent what are the side effects of {medicine}
 SideEffectsIntent give me the side effects of {medicine}
@@ -46,7 +57,9 @@ CautionsIntent cautions of {medicine}
 
 PregnancyBreastFeedingIntent can I take {medicine} whilst pregnant
 PregnancyBreastFeedingIntent can I take {medicine} whilst breastfeeding
+PregnancyBreastFeedingIntent can I take {medicine} while pregnant
+PregnancyBreastFeedingIntent can I take {medicine} while breastfeeding
 PregnancyBreastFeedingIntent pregnancy and {medicine}
+PregnancyBreastFeedingIntent tell me about pregnancy and taking {medicine}
 PregnancyBreastFeedingIntent breastfeeding and {medicine}
-
-HelpIntent help
+PregnancyBreastFeedingIntent tell me about breastfeeding and taking {medicine}
