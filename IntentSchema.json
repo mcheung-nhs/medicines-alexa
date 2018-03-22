@@ -73,6 +73,69 @@
             ]
         },
         {
+            "intent": "AlcoholIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "DriveRideIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "HowItWorksIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "FoodDrinkIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "LifestyleIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "FertilityIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
+            "intent": "ContraceptionIntent",
+            "slots": [
+                {
+                    "name": "medicine",
+                    "type": "LIST_OF_MEDICINES"
+                }
+            ]
+        },
+        {
             "intent": "AMAZON.HelpIntent",
             "slots": []
         },

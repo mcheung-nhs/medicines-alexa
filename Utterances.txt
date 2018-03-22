@@ -63,3 +63,68 @@ PregnancyBreastFeedingIntent pregnancy and {medicine}
 PregnancyBreastFeedingIntent tell me about pregnancy and taking {medicine}
 PregnancyBreastFeedingIntent breastfeeding and {medicine}
 PregnancyBreastFeedingIntent tell me about breastfeeding and taking {medicine}
+
+AlcoholIntent can I drink alcohol while taking {medicine}
+AlcoholIntent can I drink alcohol whilst taking {medicine}
+AlcoholIntent can I drink beer while taking {medicine}
+AlcoholIntent can I drink wine while taking {medicine}
+AlcoholIntent can I drink spirits while taking {medicine}
+AlcoholIntent can I drink beer whilst taking {medicine}
+AlcoholIntent can I drink wine whilst taking {medicine}
+AlcoholIntent can I drink spirits whilst taking {medicine}
+AlcoholIntent can I drink alcohol and take {medicine} at the same time
+AlcoholIntent can I drink beer and take {medicine} at the same time
+AlcoholIntent can I drink wine and take {medicine} at the same time
+AlcoholIntent can I drink spirits and take {medicine} at the same time
+AlcoholIntent should I drink alcohol and take {medicine} at the same time
+AlcoholIntent should I drink beer and take {medicine} at the same time
+AlcoholIntent should I drink wine and take {medicine} at the same time
+AlcoholIntent should I drink spirits and take {medicine} at the same time
+
+DriveRideIntent can I drive while taking {medicine}
+DriveRideIntent should I drive while taking {medicine}
+DriveRideIntent can I drive whilst taking {medicine}
+DriveRideIntent should I drive whilst taking {medicine}
+DriveRideIntent can I ride a bike while taking {medicine}
+DriveRideIntent should I ride a bike while taking {medicine}
+DriveRideIntent can I ride a bike whilst taking {medicine}
+DriveRideIntent should I ride a bike whilst taking {medicine}
+DriveRideIntent can I drive and take {medicine} at the same time
+DriveRideIntent should I drive and take {medicine} at the same time
+DriveRideIntent can I ride a bike and take {medicine} at the same time
+DriveRideIntent should I ride a bike and take {medicine} at the same time
+
+HowItWorksIntent How does {medicine} work
+
+FoodDrinkIntent is there any food or drink I can't have while taking {medicine}
+FoodDrinkIntent is there any food or drink I shouldn't have while taking {medicine}
+FoodDrinkIntent is there any food I can't have while taking {medicine}
+FoodDrinkIntent is there any food I shouldn't have while taking {medicine}
+FoodDrinkIntent is there any drink I can't have while taking {medicine}
+FoodDrinkIntent is there any drink I shouldn't have while taking {medicine}
+FoodDrinkIntent is there any food or drink I need to avoid with {medicine}
+FoodDrinkIntent is there any food or drink I need to avoid while taking {medicine}
+FoodDrinkIntent is there any food or drink I shouldn't have while taking {medicine}
+FoodDrinkIntent is there any food I need to avoid with {medicine}
+FoodDrinkIntent is there any food I need to avoid while taking {medicine}
+FoodDrinkIntent is there any food I shouldn't have while taking {medicine}
+FoodDrinkIntent is there any drink I need to avoid with {medicine}
+FoodDrinkIntent is there any drink I need to avoid while taking {medicine}
+FoodDrinkIntent is there any drink I shouldn't have while taking {medicine}
+
+LifestyleIntent can lifestyle changes help while taking {medicine}
+LifestyleIntent can lifestyle changes help whilst taking {medicine}
+
+FertilityIntent will taking {medicine} affect my fertility
+FertilityIntent does taking {medicine} affect my fertility
+FertilityIntent will taking {medicine} affect fertility
+FertilityIntent does taking {medicine} affect fertility
+FertilityIntent how does {medicine} affect fertility
+FertilityIntent how does taking {medicine} affect fertility
+
+ContraceptionIntent will taking {medicine} affect my contraception
+ContraceptionIntent does taking {medicine} affect my contraception
+ContraceptionIntent will taking {medicine} affect contraception
+ContraceptionIntent does taking {medicine} affect contraception
+ContraceptionIntent how does {medicine} affect contraception
+ContraceptionIntent how does taking {medicine} affect contraception

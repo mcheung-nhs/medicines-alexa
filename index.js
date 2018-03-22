@@ -61,6 +61,7 @@ function onIntent(intentRequest, session, callback) {
     var intent = intentRequest.intent;
     var intentName = intentRequest.intent.name;
     var medicine = intent.slots.medicine.value.toLowerCase();
+    var common = false;
 
     switch(intentName) {
         case "AboutIntent":
@@ -87,15 +88,49 @@ function onIntent(intentRequest, session, callback) {
         case "PregnancyBreastFeedingIntent":
             var section = "pregnancy";
             break;
+        case "AlcoholIntent":
+            var common = true;
+            var section = "common&question=alcohol";
+            break;
+        case "DriveRideIntent":
+            var common = true;
+            var section = "common&question=drive";
+            break;
+        case "HowItWorksIntent":
+            var common = true;
+            var section = "common&question=work";
+            break;
+        case "FoodDrinkIntent":
+            var common = true;
+            var section = "common&question=food";
+            break;
+        case "LifestyleIntent":
+            var common = true;
+            var section = "common&question=lifestyle";
+            break;
+        case "FertilityIntent":
+            var common = true;
+            var section = "common&question=fertility";
+            break;
+        case "ContraceptionIntent":
+            var common = true;
+            var section = "common&question=contraception";
+            break;
         default:
             var section = "about";
     }
 
-    var url = "https://beta-platform-review-beta-medicines.dev.beta.nhschoices.net/content-api/medicines/" + medicine + "?section=" + section;
+    var url = "https://beta-platform-review-medicines-api.dev.beta.nhschoices.net/content-api/medicines/" + medicine + "?section=" + section;
 
     request.get(url, function(error, response, body) {
       var d = JSON.parse(body);
-      var result1 = striptags(d.value.section_content[0].value);
+
+      if (common) {
+        var result1 = striptags(d.questions.question_1.value.answer[0].value);
+      } else {
+        var result1 = striptags(d.value.section_content[0].value);
+      }
+
       var result = result1.replace(/\./g, ". ").replace(/\n/g, "");
       var speechOutput = result;
       callback(session.attributes, buildSpeechletResponseWithoutCard(speechOutput, "", true));
@@ -113,8 +148,8 @@ function onSessionEnded(sessionEndedRequest, session) {
 // ------- Skill specific logic -------
 
 function getWelcomeResponse(callback) {
-    var speechOutput = "Welcome! Ask a question about a medicine, such as tell me about paracetamol or what are the side effects of tramadol";
-    var reprompt = "Ask a question about a medicine such as tell me about paracetamol or what are the side effects of ibuprofen";
+    var speechOutput = "Welcome! Ask a question about a medicine, such as tell me about paracetamol, or what are the side effects of tramadol";
+    var reprompt = "Ask a question about a medicine such as tell me about paracetamol, or what are the side effects of ibuprofen";
     var header = "Get Info";
     var shouldEndSession = false;
     var sessionAttributes = {
